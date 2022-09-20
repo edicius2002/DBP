@@ -1,0 +1,50 @@
+/* CSS styles */
+#arriba{
+  background: rgb(87, 83, 83);
+  width:1000px;
+  height:180px;
+  display:flex;
+  position: absolute;
+  left: 30%;
+}
+#derecha{
+  float:right;
+  width:500px;
+  height:800px;
+  background: white;
+  position: absolute;
+  top: 19%;
+  left: 50%;
+}
+#izquierda {
+  float:left;
+  width:360px;
+  height:800px;
+  background:rgb(216, 201, 201);
+  font-size:115%;
+  padding-left: 30px;
+  padding-right: 40px;
+  position: absolute;
+  top: 19%;
+  right: 51%; 
+}
+ol{
+  list-style-type:disc;
+  padding-left:20px;
+  margin-top: -10px;
+}
+head,body{
+  font-family:Arial;
+  margin: 0 auto;
+}
+h5{
+  margin-top: -18px;
+}
+h4{
+  margin-top: -5px;
+}
+hr{
+  background-color:black;
+  width: 300px;
+  margin-left: 0%;
+}

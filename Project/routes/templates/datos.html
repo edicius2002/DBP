@@ -1,0 +1,61 @@
+{% block title %}Registro de usuarios{% endblock %}
+{% block content %}
+    <form action="{{ url_for('read') }}" method="post">
+        <label for="name">Nombres y apellidos: </label>
+        <input type="text" id="name" name="name" /><br>
+        
+        <label for="nacimiento">Fecha de nacimiento: </label>
+        <input type="date" id="nacimiento" name="nacimiento" /><br>
+
+        <label for="ocupacion">Ocupación: </label>
+        <input type="text" id="ocupacion" name="ocupacion" /><br>
+
+        <label for="contacto">Contacto(telefono, email): </label>
+        <input type="text" id="contacto" name="contacto" /><br>
+
+        <label for="nacionalidad">Nacionalidad: </label>
+        <select name="nacionalidad" id="">
+        <option type="text" value="" >Peru</option>
+        <option type="text" value="" >Colombia</option>
+        <option type="text" value="" >Chile</option>
+        </select><br>
+
+        <label for="ingles">Nivel de ingles: </label><br>
+        <input type="radio" id="basico" name="nivel" />
+        <label for="basico">Básico</label>
+        <input type="radio" id="intermedio" name="nivel" />
+        <label for="intermedio">Intermedio</label>
+        <input type="radio" id="avanzado" name="nivel" />
+        <label for="avanzado">Avanzado</label>
+        <input type="radio" id="fluido" name="nivel" />
+        <label for="fluido">Fluido</label><br>
+
+        <label for="programacion">Lenguajes de programacion: </label><br>
+
+        <input type="checkbox" id="C++" name="leng" />
+        <label for="C++">C++</label>
+        <input type="checkbox" id="C" name="leng" />
+        <label for="C">C</label>
+        <input type="checkbox" id="Python" name="leng" />
+        <label for="Python">Python</label><br>
+
+        <label for="aptitudes">Aptitudes: </label>
+        <input type="text" id="aptitudes" name="aptitudes" /><br>
+
+        <label for="habilidades">Habilidades: </label><br>
+
+        <input type="checkbox" id="Pack office" name="hab" />
+        <label for="Pack office">Pack office</label>
+        <input type="checkbox" id="Acondicionamiento físico" name="hab" />
+        <label for="Acondicionamiento físico">Acondicionamiento físico</label>
+        <input type="checkbox" id="Creación de videos deportivos" name="hab" />
+        <label for="Creación de videos deportivos">Creación de videos deportivos</label>
+        <input type="checkbox" id="Tenis" name="hab" />
+        <label for="Tenis">Tenis</label><br>
+
+        <label for="perfil">Perfil: </label><br>
+        <textarea name="perfil1" cols="30" rows="10" ></textarea><br>
+
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+{% endblock %}

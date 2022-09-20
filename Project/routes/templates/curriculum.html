@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div id="arriba">
+      <img src="https://modaellos.com/wp-content/uploads/2017/11/cortes-tipo-rostro-ovalado-istock.jpg"
+        width="125" height="150"
+        align="middle"
+        HSPACE=150 VSPACE=15>
+      <h1 style="margin: 50px" align="center">{{nombre}} <br> <font size="5">{{ocupacion}}</font size="5"></h1>
+      </div>
+    </head>
+  <body color="red">
+    <div id="derecha">
+      <h3> PERFIL <hr>
+      </h3>
+	      <p>
+          Fecha de nacimiento: {{nacimiento}} <br>
+    	    {{perfil}}
+        </p>
+
+    	<h3> EXPERIENCIA LABORAL <hr>
+      </h3>
+        <h4> Trabajador Social
+        </h4>
+          <h5> <i> México DF. </i> | <font color="green"> 2022-Actualmente </font>
+          </h5>   
+			      <ol>
+              <li> Coordinador y mediador entre los equipos de ayuda psicológica a jóvenes y niños en exclusión social.
+              </li>
+        			<li> Velar por la salud mental del equipo y de miembros involucrados en proyectos.
+              </li>
+              <li> Mapeo de necesidades estratégicas y lógicas en diferentes áreas.
+              </li>
+              <li> Monitor de ejercicios físicos para adolescentes.
+              </li>
+              <li> Programar diferentes actividades extracurriculares en los involucrados.
+              </li>
+        		</ol>       
+       	<h4> Trabajador Social </h4>
+    		  <h5> <i> México DF. </i>| <font color="green">2020-2022 </font> </h5>
+            <ol>
+              <li> Funciones para seguimientos de casos para jóvenes con problemas de adicción.
+              </li>
+              <li> Capacitaciones e integración vinculadas a medidas preventivas.
+              </li>
+              <li> Recopilación de evidencias para auditorías y programas sociales.
+              </li>                    
+        		</ol>
+        <h4> Trabajador Social (Prácticas) </h4>
+    		  <h5> <i> Zaragoza, España </i>| <font color="green"> 2019-2020 </font> </h5>
+            <ol>
+        			<li> Profesor de lengua española e inglesa para jóvenes migrantes.
+              </li> 
+        			<li> Monitor de actividades ecológicas con adolescentes.
+              </li>
+              <li> Coordinador de áreas deportivas.
+              </li>
+        		</ol>
+
+      <h3> FORMACIÓN <hr>
+      </h3>
+        <h4> Grado de Trabajo Social </h4>
+          <h5> <i> ESMA, Madrid </i> | <font color="green"> 2012-2015 </font>
+          </h5>
+        <h4> Licenciatura Profesional </h4>
+          <h5> <i> Universidad de la Frontera, México DF </i> | <font color="green"> 2011-2012 </font>
+          </h5>
+    </div>
+
+    <div id="izquierda">
+      <h3> CONTACTO <hr>
+      </h3>
+        <img src="https://thumbs.dreamstime.com/b/llame-por-tel%C3%A9fono-al-icono-en-estilo-plano-de-moda-aislado-el-fondo-blanco-del-microtel%C3%A9fono-muestra-s%C3%ADmbolo-viejo-139843164.jpg"
+        width="20" height="20"
+        align=center> {{contacto}} <br>
+        <img src="https://thumbs.dreamstime.com/b/icono-de-contorno-del-sobre-correo-electr%C3%B3nico-aislado-fondo-blanco-s%C3%ADmbolo-vector-para-su-sitio-web-y-aplicaci%C3%B3n-m%C3%B3vil-174495807.jpg"
+        width="20" height="20"
+        align=center> josemartinez@gmail.com <br>
+        <img src="https://img1.freepng.es/20180412/iuw/kisspng-location-logo-map-location-icon-5acf46c2e03896.5070809015235335069184.jpg"
+        width="20" height="20"
+        align=center> {{nacionalidad}} <br>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/003/692/704/small/linkedin-american-business-logo-social-media-icon-black-pictogram-illustration-isolated-on-white-backgroud-free-vector.jpg"
+        width="20" height="20"
+        align=center> linkedin.com/jose-martinez              
+      <h3> IDIOMAS <hr>
+      </h3>
+        <p>
+          Español: Nativo <br>
+          Inglés: Bilingue (TOEIC 950) <br>
+          Francés: Intermedio (B2) <br>
+        </p>
+
+      <h3> APTITUDES <hr>
+      </h3>
+        <ol>
+        	<li> Lenguajes de programacion {{leng}}
+          </li> 
+        	<li> Espíritu crítico
+          </li>
+          <li> Trabajo en equipo
+          </li>
+          <li> Capacidad analítica
+          </li>
+          <li>  Habilidades físicas
+          </li>                  
+        </ol>
+
+      <h3> HABILIDADES <hr>
+      </h3>  
+        <ol>
+        	<li> Acondicionamiento físico
+          </li> 
+        	<li> Creación de videos deportivos
+          </li>
+          <li> Pack office
+          </li>
+          <li> Tenis
+          </li>                 
+        </ol> 
+
+      <h3> Otros intereses <hr >
+      </h3>  
+        <ol>
+        	<li> Creación de yincanas
+          </li> 
+        	<li> Paseos ecológicos grupales
+          </li>
+          <li> Lectura grupal en inglés
+          </li>               
+          </ol>
+    </div>        
+	</body>
+</html>
