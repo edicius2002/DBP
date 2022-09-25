@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DBP</title>
+    <script>
+      function call(){
+        var ol = document.querySelector("#tasks");
+        for(var p=0; p<=ol.childElementCount-1;p++){
+          var ss= ol.children[p].firstChild;
+          if(ss.checked==false){
+            ss.checked="true";
+            ss.onchange();
+          }
+        }
+        return false;
+      }
+      function delall(){
+        ol = document.querySelector("#tasks");
+        while(ol.firstChild){
+          ol.lastChild.remove();
+        }
+        return false;
+      }
+      function elimina(aa){
+        var bb = aa.parentElement;
+        bb.remove();
+      }
+      function mark(cb){
+        texto = cb.nextSibling;
+        if(cb.checked){
+          del = document.createElement("del");
+          del.append(texto);
+          cb.after(del);
+        }
+        else{
+          ot = texto;
+          tex = ot.firstChild;
+          ot.remove();
+          cb.after(tex);
+        }
+      }
+      function add(){
+        var ol = document.querySelector("#tasks");
+        var li = document.createElement("li");
+        var button1 = document.createElement("input");
+        var texto = document.querySelector("#task").value;
+        var button2 = document.createElement("button");
+        button1.setAttribute("type", "checkbox");
+        button1.setAttribute("onchange","mark(this)");
+        button2.innerHTML="x";
+        button2.setAttribute("onclick", "elimina(this)");
+        ol.appendChild(li);
+        li.appendChild(button1);
+        button1.after(texto);
+        li.appendChild(button2);
+        document.querySelector("#task").value = "";
+        return false
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Tasks</h1>
+    <form id="new-task">
+      <input id="task" autocomplete="off" autofocus placeholder="New Task" type="text" />
+      <input type="submit" value="Complete All" onClick="return call()"/>
+      <input type="submit" value="Delete All" onClick="return delall()"/>
+      <input type="submit" onClick="return add()"/>
+      
+    </form>
+    <ol id="tasks"></ol>
+  </body>
+</html>
