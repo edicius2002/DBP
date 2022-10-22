@@ -1,14 +1,14 @@
 from modulefinder import IMPORT_NAME
 from os import name
+from typing import Text
+from wsgiref.validate import validator
 from flask import Flask, render_template, request, redirect, url_for
-from wtforms import Form, BooleanField, StringField, validators
-from wtforms.validators import Required
+from "datos.html" import contador
 app = Flask(__name__)
-    
-@app.route("/", methods=["GET", "POST"])
+@app.route('/', methods=['GET', 'POST'])
 def show_signup_form():
-    return render_template("datos.html")
-@app.route("/read", methods=["GET", "POST"])
+    return render_template('datos.html')
+@app.route('/read', methods=['GET', 'POST'])
 def read():
     nombre=request.form['name']
     nacimiento = request.form['nacimiento']
@@ -20,4 +20,4 @@ def read():
     apti = request.form['aptitudes']
     habi = request.form.getlist('hab')
     perfil= request.form['perfil1']
-    return render_template("curriculum.html", nombre=nombre, nacimiento = nacimiento, ocupacion = ocupacion, contacto = contacto, nacionalidad = nacionalidad, ingles = ingles, leng = leng, apti = apti, habi = habi, perfil=perfil)
+    return render_template('curriculum.html', nombre=nombre, nacimiento = nacimiento, ocupacion = ocupacion, contacto = contacto, nacionalidad = nacionalidad, ingles = ingles, leng = leng, apti = apti, habi = habi, perfil=perfil)

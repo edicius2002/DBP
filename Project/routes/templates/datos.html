@@ -1,61 +1,109 @@
 {% block title %}Registro de usuarios{% endblock %}
 {% block content %}
-    <form action="{{ url_for('read') }}" method="post">
+    <form action="{{ url_for('read') }}" method="POST">
         <label for="name">Nombres y apellidos: </label>
-        <input type="text" id="name" name="name" /><br>
+        <input type="text" id="name" name="name" required minlength="1"><br>
         
         <label for="nacimiento">Fecha de nacimiento: </label>
-        <input type="date" id="nacimiento" name="nacimiento" /><br>
+        <input type="date" id="nacimiento" name="nacimiento" required><br>
 
         <label for="ocupacion">Ocupación: </label>
-        <input type="text" id="ocupacion" name="ocupacion" /><br>
+        <input type="text" id="ocupacion" name="ocupacion" required minlength="1"><br>
 
         <label for="contacto">Contacto(telefono, email): </label>
-        <input type="text" id="contacto" name="contacto" /><br>
+        <input type="text" id="contacto" name="contacto" required minlength="1"><br>
 
         <label for="nacionalidad">Nacionalidad: </label>
         <select name="nacionalidad" id="">
-        <option type="text" value="Peru" >Peru</option>
-        <option type="text" value="Colombia" >Colombia</option>
-        <option type="text" value="Chile" >Chile</option>
+        <option type="text" value="Peru" required>Peru</option>
+        <option type="text" value="Colombia" required>Colombia</option>
+        <option type="text" value="Chile" required>Chile</option>
         </select><br>
 
         <label for="ingles">Nivel de ingles: </label><br>
-        <input type="radio" id="basico" name="nivel" value="Basico"/>
+        <input type="radio" id="basico" name="nivel" value="Basico" required>
         <label for="basico">Básico</label>
-        <input type="radio" id="intermedio" name="nivel" value="Intermedio"/>
+        <input type="radio" id="intermedio" name="nivel" value="Intermedio" required>
         <label for="intermedio">Intermedio</label>
-        <input type="radio" id="avanzado" name="nivel" value="Avanzado"/>
+        <input type="radio" id="avanzado" name="nivel" value="Avanzado" required>
         <label for="avanzado">Avanzado</label>
-        <input type="radio" id="fluido" name="nivel" value="Fluido"/>
+        <input type="radio" id="fluido" name="nivel" value="Fluido" required>
         <label for="fluido">Fluido</label><br>
 
         <label for="programacion">Lenguajes de programacion: </label><br>
 
-        <input type="checkbox" id="C++" name="leng" value="C++"/>
+        <input class = "acb" type="checkbox" id="C++" name="leng" value="C++" onclick='deRequire("acb")' required>
         <label for="C++">C++</label>
-        <input type="checkbox" id="C" name="leng" value="C"/>
+        <input class = "acb" type="checkbox" id="C" name="leng" value="C" onclick='deRequire("acb")' required>
         <label for="C">C</label>
-        <input type="checkbox" id="Python" name="leng" value="Python"/>
+        <input class = "acb" type="checkbox" id="Python" name="leng" value="Python" onclick='deRequire("bcd")' required>
         <label for="Python">Python</label><br>
 
         <label for="aptitudes">Aptitudes: </label>
-        <input type="text" id="aptitudes" name="aptitudes" /><br>
+        <button type="button" onClick="copiar1()">Add</button><br>
+        <ol id="div1">
+            <li> <input type="text" id="aptitudes" name="aptitudes" required minlength="1"></li>
+            
+        </ol>
+        
+        
+
+        </button> 
 
         <label for="habilidades">Habilidades: </label><br>
 
-        <input type="checkbox" id="Pack office" name="hab" value="Pack office"/>
+        <input class = "bcd" type="checkbox" id="Pack office" name="hab" value="Pack office" onclick='deRequire("bcd")' required>
         <label for="Pack office">Pack office</label>
-        <input type="checkbox" id="Acondicionamiento físico" name="hab" value="Acondicionamiento físico"/>
+        <input class = "bcd" type="checkbox" id="Acondicionamiento físico" name="hab" value="Acondicionamiento físico" onclick='deRequire("bcd")' required>
         <label for="Acondicionamiento físico">Acondicionamiento físico</label>
-        <input type="checkbox" id="Creación de videos deportivos" name="hab" value="Creación de videos deportivos"/>
+        <input class = "bcd" type="checkbox" id="Creación de videos deportivos" name="hab" value="Creación de videos deportivos" onclick='deRequire("bcd")' required>
         <label for="Creación de videos deportivos">Creación de videos deportivos</label>
-        <input type="checkbox" id="Tenis" name="hab" value="Tenis"/>
+        <input class = "bcd" type="checkbox" id="Tenis" name="hab" value="Tenis" onclick='deRequire("bcd")' required>
         <label for="Tenis">Tenis</label><br>
 
         <label for="perfil">Perfil: </label><br>
-        <textarea name="perfil1" cols="30" rows="10" ></textarea><br>
+        <textarea name="perfil1" cols="30" rows="10" required></textarea><br>
 
         <button type="submit" class="btn btn-primary">Registrar</button>
     </form>
+    <script>
+        function deRequire(elClass) {
+            el = document.getElementsByClassName(elClass);
+            var atLeastOneChecked = false; //at least one cb is checked
+            for (i = 0; i < el.length; i++) {
+                if (el[i].checked === true) {
+                atLeastOneChecked = true;
+                }
+            }
+
+            if (atLeastOneChecked === true) {
+                for (i = 0; i < el.length; i++) {
+                el[i].required = false;
+                }
+            } else {
+                for (i = 0; i < el.length; i++) {
+                el[i].required = true;
+                }
+            }
+        }
+        let contador=1;
+        function copiar1(){
+            contador+=1;
+            var temp= document.createElement("input");
+            temp.setAttribute("name", "aptitudes"+contador)
+            var ol = document.querySelector("#div1");
+            var li = document.createElement("li");
+            ol.appendChild(li);
+            li.appendChild(temp);
+        }
+        function copiar2(){
+            contador+=1;
+            var temp= document.createElement("input");
+            temp.setAttribute("name", "aptitudes"+contador)
+            var ol = document.querySelector("#div1");
+            var li = document.createElement("li");
+            ol.appendChild(li);
+            li.appendChild(temp);
+        }
+    </script>
 {% endblock %}
