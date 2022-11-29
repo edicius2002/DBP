@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CV.MainPage">
+    <ScrollView>
+        <StackLayout Background="purple" Margin="16">
+            <Label x:Name="lbl_principal"
+                   Text="Bienvenido. Llene sus datos"
+                   FontSize="Medium"
+                   Margin="8"/>
+            <Frame Margin="8" Background="black">
+                <StackLayout>
+                    
+                    <Entry x:Name="lbl_nombre"
+                           Placeholder="Ingrese su nombre"
+                           FontSize="Medium"
+                           Completed="lbl_nombre_Completed"
+                           TextChanged="lbl_nombre_TextChanged"/>
+                    <Label Text="Seleccione su fecha de nacimiento"/>
+                    <DatePicker x:Name="Nacimiento"/>
+                    
+                    <Entry x:Name="lbl_ocupacion"
+                           Placeholder="Ingrese su ocupacion"
+                           FontSize="Medium"
+                           Completed="lbl_ocupacion_Completed"/>
+                    
+                    <Entry x:Name="lbl_correo"
+                           Placeholder="Ingrese su correo/telefono"
+                           FontSize="Medium"
+                           Completed="lbl_correo_Completed"/>
+                    
+                    <Picker Title="Seleccione su nacionalidad" TitleColor="White" x:Name="nacionalidad">
+                        <Picker.Items>
+                            <x:String>Perú</x:String>
+                            <x:String>Colombia</x:String>
+                            <x:String>Chile</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    
+                    <Label Text="Seleccione su nivel de inglés"/>
+                    <RadioButton Content="Básico"/>
+                    <RadioButton Content="Intermedio"/>
+                    <RadioButton Content="Avanzado"/>
+                    <RadioButton Content="Fluido"/>
+                    
+                    <Label Text="Seleccione lenguajes de programación"/>                    
+                    <Grid ColumnDefinitions="auto,*">
+                        <CheckBox x:Name="Python" Grid.Column="0"/>
+                        <Label Text="Python" Grid.Column="1" />
+
+                        <CheckBox x:Name="Java" Grid.Column="0" Grid.Row="1"/>
+                        <Label Text="Java" Grid.Column="1" Grid.Row="1"/>
+
+                        <CheckBox x:Name="C" Grid.Column="0" Grid.Row="2"/>
+                        <Label Text="C" Grid.Column="1" Grid.Row="2"/>
+                    </Grid>
+                    
+                    <Label Text="Seleccione sus habilidades"/>
+                    <Grid ColumnDefinitions="auto,*">
+                        <CheckBox x:Name="Videojuegos" Grid.Column="0"/>
+                        <Label Text="Bueno en videojuegos" Grid.Column="1" />
+
+                        <CheckBox x:Name="Office" Grid.Column="0" Grid.Row="1"/>
+                        <Label Text="Experto en Office" Grid.Column="1" Grid.Row="1"/>
+
+                        <CheckBox x:Name="Perros" Grid.Column="0" Grid.Row="2"/>
+                        <Label Text="Paseador de perros" Grid.Column="1" Grid.Row="2"/>
+                    </Grid>
+
+                    <Editor x:Name="Perfil" Placeholder="Perfil"  HeightRequest="100" TextColor="White" AutoSize="TextChanges"/>
+
+                    <Grid ColumnDefinitions="auto,*">
+                        <CheckBox x:Name="cbox_terminos"
+                                  IsChecked="False"
+                                  CheckedChanged="cbox_terminos_CheckedChanged"
+                                  Grid.Column="0"/>                                
+                        <Label Text="Acepto los Términos y Condiciones"
+                               Grid.Column="1"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btn_registrar"
+                    Text="Registrar"
+                    FontSize="Large"
+                    Clicked="btn_registrar_Clicked"
+                    CornerRadius="10"
+                    IsEnabled="False"
+                    TextColor="Aqua"
+                    BorderColor="Red"
+                    FontAttributes="Bold"
+                    Padding="8"
+                    Margin="32"
+                    BackgroundColor="White"
+                    BorderWidth="2"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
