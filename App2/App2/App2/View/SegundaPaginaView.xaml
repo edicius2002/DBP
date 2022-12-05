@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2.View.SegundaPaginaView">
     <NavigationPage.TitleView >
-        <Label Text="Mi Primera Aplicación" Margin="-57,0,0,0" TextColor="Red" FontAttributes="Bold" FontSize="22" HorizontalTextAlignment="Center"/>
+        <Label Text="Mi Primera Aplicación" Margin="-57,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="22" HorizontalTextAlignment="Center"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
@@ -19,30 +19,29 @@
                     <RowDefinition Height="80"/>
                     <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
-                <Label Text="CONTACTO:" Grid.Row="0" Grid.Column="0" FontSize="20"/>
-                <Label Text="qwdqw" x:Name="cor" Grid.Row="1" Grid.Column="0" FontSize="15"/>
-                
-                <Label Text="IDIOMAS:" Grid.Row="2" Grid.Column="0" FontSize="20"/>
-                <Label Text="" x:Name="ing" Grid.Row="3" Grid.Column="0" FontSize="15"/>
-                
-                <Label Text="APTITUDES:" Grid.Row="4" Grid.Column="0" FontSize="20"/>
-                <Label Text="" x:Name="leng" Grid.Row="5" Grid.Column="0" FontSize="15"/>
-                
-                <Label Text="HABILIDADES:" Grid.Row="6" Grid.Column="0" FontSize="20"/>
-                <Label Text=""  x:Name="hab" Grid.Row="7" Grid.Column="0" FontSize="15"/>
+                <Label Text="CONTACTO:" Grid.Row="0" Grid.Column="0" FontSize="20" BackgroundColor="Blue"/>
+                <Label Text="" x:Name="cor" Grid.Row="1" Grid.Column="0" FontSize="15" BackgroundColor="Blue"/>
 
-                <Label Text="PERFIL:" Grid.Row="0" Grid.Column="1" FontSize="20"/>
-                <Label Text="" x:Name="perf" Grid.Row="1" Grid.Column="1" FontSize="15"/>
-                
-                <Label Text="EXPERIENCIA LABORAL:" Grid.Row="2" Grid.Column="1" FontSize="20"/>
-                <Label Text="expe" Grid.Row="3" Grid.Column="1" FontSize="15"/>
-                
-                <Label Text="FORMACIÓN:" Grid.Row="4" Grid.Column="1" FontSize="20"/>
-                <Label Text="expe" Grid.Row="5" Grid.Column="1" FontSize="15"/>
-                
+                <Label Text="IDIOMAS:" Grid.Row="2" Grid.Column="0" FontSize="20" BackgroundColor="Red"/>
+                <Label Text="" x:Name="ing" Grid.Row="3" Grid.Column="0" FontSize="15" BackgroundColor="Red"/>
+
+                <Label Text="APTITUDES:" Grid.Row="4" Grid.Column="0" FontSize="20" BackgroundColor="Green"/>
+                <Label Text="" x:Name="leng" Grid.Row="5" Grid.Column="0" FontSize="15" BackgroundColor="Green"/>
+
+                <Label Text="HABILIDADES:" Grid.Row="6" Grid.Column="0" FontSize="20" BackgroundColor="Gray"/>
+                <Label Text="" x:Name="hab" Grid.Row="7" Grid.Column="0" FontSize="15" BackgroundColor="Gray"/>
+
+                <Label Text="PERFIL:" Grid.Row="0" Grid.Column="1" FontSize="20" BackgroundColor="Purple"/>
+                <Label Text="" x:Name="perf" Grid.Row="1" Grid.Column="1" FontSize="15" BackgroundColor="Purple"/>
+
+                <Label Text="EXPERIENCIA LABORAL:" Grid.Row="2" Grid.Column="1" FontSize="20" BackgroundColor="Brown"/>
+                <Label Text="" x:Name="exp" Grid.Row="3" Grid.Column="1" FontSize="15" BackgroundColor="Brown"/>
+
+                <Label Text="FORMACIÓN:" Grid.Row="4" Grid.Column="1" FontSize="20" BackgroundColor="SkyBlue"/>
+                <Label Text="" x:Name="form" Grid.Row="5" Grid.Column="1" FontSize="15" BackgroundColor="SkyBlue"/>
+
             </Grid>
-            <Label Text="" x:Name="nacio" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

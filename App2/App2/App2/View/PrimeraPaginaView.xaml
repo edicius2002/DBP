@@ -2,16 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2.View.PrimeraPaginaView">
+    
     <NavigationPage.TitleView >
-        <Label Text="Curriculum Vitae" TextColor="White" FontAttributes="Bold" FontSize="22" HorizontalTextAlignment="Center"/>
+        <Label Text="Curriculum Vitae" FontAttributes="Bold" FontSize="22" HorizontalTextAlignment="Center" BackgroundColor="Blue"/>
     </NavigationPage.TitleView>
-    <ScrollView>
-        <StackLayout Background="purple" Margin="16">
+    <ScrollView BackgroundColor="Blue">
+        <StackLayout Margin="16">
             <Label
                    Text="Bienvenido. Llene sus datos"
                    FontSize="Medium"
-                   Margin="8"/>
-            <Frame Margin="8" Background="black">
+                   Margin="8"
+                   HorizontalTextAlignment="Center"/>
+            <Frame Margin="8" BackgroundColor="Purple">
                 <StackLayout>
                     
                     <Entry x:Name="EntryNombre"
@@ -19,7 +21,7 @@
                            FontSize="Medium"/>
                     
                     <Label Text="Seleccione su fecha de nacimiento"/>
-                    <DatePicker x:Name="EntryNacimiento"/>
+                    <DatePicker x:Name="EntryNacimiento" Format="d"/>
 
                     <Entry x:Name="EntryOcupacion"
                            Placeholder="Ingrese su ocupacion"
@@ -29,12 +31,14 @@
                            Placeholder="Ingrese su correo"
                            FontSize="Medium"/>
 
-                    <Picker Title="Seleccione su nacionalidad" TitleColor="White" x:Name="EntryNacionalidad">
-                        <Picker.Items>
-                            <x:String>Perú</x:String>
-                            <x:String>Colombia</x:String>
-                            <x:String>Chile</x:String>
-                        </Picker.Items>
+                    <Picker Title="Seleccione su nacionalidad" x:Name="EntryNacionalidad">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Perú</x:String>
+                                <x:String>Colombia</x:String>
+                                <x:String>Chile</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
                     </Picker>
 
                     <Label Text="Seleccione su nivel de inglés"/>
@@ -73,7 +77,7 @@
                     <Editor x:Name="EntryForm" Placeholder="Formacion"  HeightRequest="70" TextColor="White" AutoSize="TextChanges"/>
                 </StackLayout>
             </Frame>
-            <Button Text="Go" Clicked="Button1_Clicked"  VerticalOptions="Center"/>
+            <Button Text="Go" Clicked="Button1_Clicked"  VerticalOptions="Center" BackgroundColor="Black"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

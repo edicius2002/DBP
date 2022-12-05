@@ -66,7 +66,7 @@ namespace App2.View
             string nacimiento = EntryNacimiento.Date.ToString("d");
             string ocupacion = EntryOcupacion.Text;
             string correo = EntryCorreo.Text;
-            string nacionalidad=EntryNacionalidad.ToString();
+            string nacionalidad = (string)EntryNacionalidad.ItemsSource[EntryNacionalidad.SelectedIndex];
             string ingles= english;
             string lenguaje = leng;
             string habilidades = habil;
@@ -74,7 +74,7 @@ namespace App2.View
             string aptitudes = EntryApt.Text;
             string experiencia = EntryExp.Text;
             string formacion = EntryForm.Text;
-            await Application.Current.MainPage.Navigation.PushAsync(new SegundaPaginaView(nombre, ocupacion, correo, nacimiento, nacionalidad, perfil, ingles, lenguaje, habilidades));
+            await Application.Current.MainPage.Navigation.PushAsync(new SegundaPaginaView(nombre, ocupacion, correo, nacimiento, nacionalidad, perfil, ingles, lenguaje, habilidades, aptitudes, experiencia, formacion));
         }
 
     }
