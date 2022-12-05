@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.View.PrimeraPaginaView">
+    <NavigationPage.TitleView >
+        <Label Text="Curriculum Vitae" TextColor="White" FontAttributes="Bold" FontSize="22" HorizontalTextAlignment="Center"/>
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <StackLayout Background="purple" Margin="16">
+            <Label
+                   Text="Bienvenido. Llene sus datos"
+                   FontSize="Medium"
+                   Margin="8"/>
+            <Frame Margin="8" Background="black">
+                <StackLayout>
+                    
+                    <Entry x:Name="EntryNombre"
+                           Placeholder="Ingrese su nombre"
+                           FontSize="Medium"/>
+                    
+                    <Label Text="Seleccione su fecha de nacimiento"/>
+                    <DatePicker x:Name="EntryNacimiento"/>
+
+                    <Entry x:Name="EntryOcupacion"
+                           Placeholder="Ingrese su ocupacion"
+                           FontSize="Medium"/>
+
+                    <Entry x:Name="EntryCorreo"
+                           Placeholder="Ingrese su correo"
+                           FontSize="Medium"/>
+
+                    <Picker Title="Seleccione su nacionalidad" TitleColor="White" x:Name="EntryNacionalidad">
+                        <Picker.Items>
+                            <x:String>Perú</x:String>
+                            <x:String>Colombia</x:String>
+                            <x:String>Chile</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label Text="Seleccione su nivel de inglés"/>
+                    <RadioButton x:Name="basico" Content="Básico" Value="Básico"/>
+                    <RadioButton x:Name="intermedio" Content="Intermedio" Value="Intermedio"/>
+                    <RadioButton x:Name="avanzado" Content="Avanzado" Value="Avanzado"/>
+                    <RadioButton x:Name="fluido" Content="Fluido" Value="Fluido"/>
+
+                    <Label Text="Seleccione lenguajes de programación"/>
+                    <Grid ColumnDefinitions="auto,*">
+                        <CheckBox x:Name="Python" Grid.Column="0"/>
+                        <Label Text="Python" Grid.Column="1" />
+
+                        <CheckBox x:Name="Java" Grid.Column="0" Grid.Row="1"/>
+                        <Label Text="Java" Grid.Column="1" Grid.Row="1"/>
+
+                        <CheckBox x:Name="C" Grid.Column="0" Grid.Row="2"/>
+                        <Label Text="C" Grid.Column="1" Grid.Row="2"/>
+                    </Grid>
+
+                    <Label Text="Seleccione sus habilidades"/>
+                    <Grid ColumnDefinitions="auto,*">
+                        <CheckBox x:Name="videojuegos" Grid.Column="0"/>
+                        <Label Text="Bueno en videojuegos" Grid.Column="1"/>
+
+                        <CheckBox x:Name="office" Grid.Column="0" Grid.Row="1"/>
+                        <Label Text="Experto en Office" Grid.Column="1" Grid.Row="1"/>
+
+                        <CheckBox x:Name="perros" Grid.Column="0" Grid.Row="2"/>
+                        <Label Text="Paseador de perros" Grid.Column="1" Grid.Row="2"/>
+                    </Grid>
+
+                    <Editor x:Name="EntryPerfil" Placeholder="Perfil"  HeightRequest="70" TextColor="White" AutoSize="TextChanges"/>
+                    <Editor x:Name="EntryApt" Placeholder="Aptitudes"  HeightRequest="70" TextColor="White" AutoSize="TextChanges"/>
+                    <Editor x:Name="EntryExp" Placeholder="Experiencia laboral"  HeightRequest="70" TextColor="White" AutoSize="TextChanges"/>
+                    <Editor x:Name="EntryForm" Placeholder="Formacion"  HeightRequest="70" TextColor="White" AutoSize="TextChanges"/>
+                </StackLayout>
+            </Frame>
+            <Button Text="Go" Clicked="Button1_Clicked"  VerticalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
